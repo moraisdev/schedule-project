@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<h1 class="mt-5">{{ contact.name }} {{ contact.surname }}</h1>
+
+<p>
+  {% if contact.photo %}
+  <img src="{{ contact.photo.url }}" style="max-width: 250px; height: auto;">
+  {% endif %}
+</p>
+
+<dl>
+  <dt>ID</dt>
+  <dd>{{ contact.id }}</dd>
+
+  <dt>phone</dt>
+  <dd>{{ contact.phone }}</dd>
+
+  <dt>email</dt>
+  <dd>{{ contact.email }}</dd>
+
+  <dt>creation date</dt>
+  <dd>{{ contact.creation_date|date:'d/m/Y' }}</dd>
+
+  <dt>category</dt>
+  <dd>{{ contact.category }}</dd>
+
+  <dt>description</dt>
+  <dd>{{ contact.description }}</dd>
+</dl>
+{%endblock%}
